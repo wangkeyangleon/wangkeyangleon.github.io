@@ -331,64 +331,42 @@
 
 
   
-  
-  
-
-  
-
-  
-
-  
-  <section id="comments" class="comments">
-    <style>
-      .comments {
-        margin: 30px;
-        padding: 10px;
-        background: #fff
-      }
-
-    @media screen and (max-width:800px) {
-      .comments {
-        margin: auto;
-        padding: 10px;
-        background: #fff
-        }
-      }
-    </style>
-    <div id="vcomment" class="comment"></div>
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    new Valine({
-        av: AV,
-        el: '#vcomment',
-        notify: notify,
-        app_id: "apMqteu62H0eVhUOYG57lX8O-MdYXbMMI",
-        app_key: "qKJOEN5A8wzDEj1iUUT8R7lv",
-        placeholder: "Please leave your comment",
-        avatar:"mm",
-    });
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "apMqteu62H0eVhUOYG57lX8O-MdYXbMMI",
+            app_key: "qKJOEN5A8wzDEj1iUUT8R7lv",
+            placeholder: "Please leave your comment",
+            avatar:"mm"
+        });
+    }
 </script>
+
 
   </section>
+
+
+  
+  
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://example.com/2021/06/07/%20MarkDown%20grammer/",
-  owner: 'wangkeyangleon',
-  repo: 'https://wangkeyangleon.github.io/',
-  oauth: {
-    client_id: '8b57728b0d9ac026b142',
-    client_secret: 'edf8aacddb81d3151aaa46966f49d377ec0155ba',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
+
+  
+
   
 
 
