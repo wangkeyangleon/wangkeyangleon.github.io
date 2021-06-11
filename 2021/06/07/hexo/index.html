@@ -26,6 +26,11 @@
   
     <link rel="icon" href="/Images/favicon.ico">
   
+  
+    <script src="/lib/valine/av-min.js"></script>
+    <script src='/lib/valine/Valine.min.js'></script>
+    <script src="/lib/valine/jquery.min.js"></script>
+  
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
   
@@ -36,6 +41,7 @@
   
 
   
+
 
 <meta name="generator" content="Hexo 5.2.0"></head>
 
@@ -322,6 +328,58 @@
   
 
   
+  <section id="comments" class="comments">
+    <style>
+      .comments {
+        margin: 30px;
+        padding: 10px;
+        background: #fff
+      }
+
+    @media screen and (max-width:800px) {
+      .comments {
+        margin: auto;
+        padding: 10px;
+        background: #fff
+        }
+      }
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script>
+    var notify = 'false' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    new Valine({
+        av: AV,
+        el: '#vcomment',
+        notify: notify,
+        app_id: "apMqteu62H0eVhUOYG57lX8O-MdYXbMMI",
+        app_key: "qKJOEN5A8wzDEj1iUUT8R7lv",
+        placeholder: "Please leave your comment",
+        avatar:"mm",
+    });
+</script>
+
+  </section>
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://example.com/2021/06/07/hexo/",
+  owner: 'wangkeyangleon',
+  repo: 'https://wangkeyangleon.github.io/',
+  oauth: {
+    client_id: '8b57728b0d9ac026b142',
+    client_secret: 'edf8aacddb81d3151aaa46966f49d377ec0155ba',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
+
 
 
           </div>
