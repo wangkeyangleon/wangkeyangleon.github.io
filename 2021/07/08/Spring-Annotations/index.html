@@ -8,15 +8,22 @@
   <meta name="baidu-site-verification" content="code-yxX0m503oB" />
   <meta name="google-site-verification" content="GYW4FTfRrNy_1a_yVTyCwPkiRhp2h2edlAb39HYcUOY" />
   <link rel="dns-prefetch" href="https://wangkeyangleon.github.io">
-  <title>Tag: hexo | Keyang Wang Blog</title>
+  <title>Spring Annotations | Keyang Wang Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Keyang Wang Blog">
-<meta property="og:url" content="https://wangkeyangleon.github.io/tags/hexo/index.html">
+  <meta name="description" content="Description: this article is talking about some annotations in Spring.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Annotations">
+<meta property="og:url" content="https://wangkeyangleon.github.io/2021/07/08/Spring-Annotations/index.html">
 <meta property="og:site_name" content="Keyang Wang Blog">
+<meta property="og:description" content="Description: this article is talking about some annotations in Spring.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wangkeyangleon.github.io/Images/IOC.png">
+<meta property="article:published_time" content="2021-07-08T03:45:33.000Z">
+<meta property="article:modified_time" content="2021-07-08T04:48:20.554Z">
 <meta property="article:author" content="Keyang Wang">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wangkeyangleon.github.io/Images/IOC.png">
   
     <link rel="alternative" href="/atom.xml" title="Keyang Wang Blog" type="application/atom+xml">
   
@@ -150,60 +157,276 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Spring-Annotations" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/07/hexo/" class="archive-article-date">
-  	<time datetime="2021-06-07T04:40:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/07/hexo/">How to use hexo</a>
+    <h1 class="article-title" itemprop="name">
+      Spring Annotations
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/07/08/Spring-Annotations/" class="archive-article-date">
+  	<time datetime="2021-07-08T03:45:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Description: this article is talking about some annotations in Spring.</p>
+<a id="more"></a>
+<hr>
+<h1 id="Pre-class"><a href="#Pre-class" class="headerlink" title="Pre class"></a>Pre class</h1><h2 id="IoC-Containers"><a href="#IoC-Containers" class="headerlink" title="IoC Containers"></a>IoC Containers</h2><pre><code>The Spring container is at the core of the Spring Framework. The container will create the objects, wire them together, configure them, and manage their complete life cycle from creation till destruction. The Spring container uses DI to manage the components that make ip an appliation. These objects are called Spring Beans</code></pre>
+<p><img src="/Images/IOC.png" alt="avatar"></p>
+<h2 id="What-is-Spring-Bean"><a href="#What-is-Spring-Bean" class="headerlink" title="What is Spring Bean"></a>What is Spring Bean</h2><pre><code>The objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. These beans are created with the configuration metadata that you supply to the container</code></pre>
+<h1 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h1><pre><code>this annotation is making a dependency which Spring is going to resolve and inject. We can use this annotation with a constructor, setter, or field injection.
+it has a boolean argument called reuqired with a default value of true. It tunes Spring&#39;s behavior when it doesn&#39;t find a suitable bean to write. When true, an exception is thrown, otherwise, nothing is wired.</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Target(&#123;ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.PARAMETER, ElementType.FIELD, ElementType.ANNOTATION_TYPE&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Autowired &#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">required</span><span class="params">()</span> <span class="keyword">default</span> <span class="keyword">true</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>If we use constructor injection, all constructor arguments are mandatory.
+- Constructor injection</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    	Engine engine;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    Car(Engine engine) &#123;</span><br><span class="line">        <span class="keyword">this</span>.engine = engine;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Bean"><a href="#Bean" class="headerlink" title="@Bean"></a>@Bean</h1><pre><code>makes a factory method which instantiates a Spring Bean: it is a method-level annotation. It is an alternative of XML &lt;bean&gt; tag. It tells the method to produce a bean to be managed by Spring Container</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function">Engine <span class="title">engine</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> Engine();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>Spring calls these methods when a new instance of the return type is required.
+The resulting bean has the same name as the factory method. If we want to name it differently, we can do so with the name or the value arguments of this annotation(the argument value is an alias for the arguments name)</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean(&quot;engine&quot;)</span></span><br><span class="line"><span class="function">Engine <span class="title">getEngine</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Engine();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>**Note: all methods annotated with @Bean must be in @Configuration classes.**</code></pre>
+<h1 id="Required"><a href="#Required" class="headerlink" title="@Required"></a>@Required</h1><pre><code>it on setter methdos to mark dependencies that we want to populate through XML</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Required</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setColor</span><span class="params">(String color)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.baeldung.annotations.Bike&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;color&quot;</span> <span class="attr">value</span>=<span class="string">&quot;green&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h1><pre><code>it is class-level annotation. It is used to mark a Java class as a bean. A java class annotated with @Component is found during the classpath. The spring framework pick it up and configure it in the application context as a Spring bean.</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">.......  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Controller"><a href="#Controller" class="headerlink" title="@Controller"></a>@Controller</h1><pre><code>the @Controller is a class-level annotation. It is a specializaton of @Component. It makes a class a web request handler. It is often used to serve web pages. By default, it returns a string that indicates which route to redirect. It is mostly used with @RequestMapping annotation.</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(path = &quot;api/v1/student&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> StudentService studentService;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    this studentService will be autowired and do not need new</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">StudentController</span><span class="params">(StudentService studentService)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.studentService = studentService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Student&gt; <span class="title">getStudents</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> studentService.getStudents();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    add student to db</span></span><br><span class="line">    <span class="meta">@PostMapping</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerNewStudent</span><span class="params">(<span class="meta">@RequestBody</span> Student student)</span></span>&#123;</span><br><span class="line">        studentService.addNewStudent(student);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    delete student from db</span></span><br><span class="line">    <span class="meta">@DeleteMapping(path = &quot;&#123;studentId&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteStudent</span><span class="params">(<span class="meta">@PathVariable(&quot;studentId&quot;)</span> Long id)</span></span>&#123;</span><br><span class="line">        studentService.deleteStudent(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    update the student with name or email</span></span><br><span class="line">    <span class="meta">@PutMapping(path = &quot;&#123;studentId&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateStudent</span><span class="params">(<span class="meta">@PathVariable(&quot;studentId&quot;)</span> Long id,</span></span></span><br><span class="line"><span class="function"><span class="params">                              <span class="meta">@RequestParam(required = false)</span> String name,</span></span></span><br><span class="line"><span class="function"><span class="params">                              <span class="meta">@RequestParam(required = false)</span> String email)</span></span>&#123;</span><br><span class="line">        studentService.updateStudent(id,name,email);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Service"><a href="#Service" class="headerlink" title="@Service"></a>@Service</h1><pre><code>it is a class level, it tells the Spring that class contains the business logic</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> StudentRepository studentRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">StudentService</span><span class="params">(StudentRepository studentRepository)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.studentRepository = studentRepository;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Student&gt; <span class="title">getStudents</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> studentRepository.findAll();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addNewStudent</span><span class="params">(Student student)</span> </span>&#123;</span><br><span class="line"><span class="comment">//        get all emails form repository</span></span><br><span class="line">        Optional&lt;Student&gt; studentByEmail =</span><br><span class="line">                studentRepository.findStudentByEmail(student.getEmail());</span><br><span class="line">        <span class="keyword">if</span> (studentByEmail.isPresent()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">&quot;the email has already exist&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        save the student into db</span></span><br><span class="line">        studentRepository.save(student);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteStudent</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">        studentRepository.deleteById(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//it&#x27;s used to combine more than one writes on a database as a single atomic operation</span></span><br><span class="line">    <span class="comment">//when somebody call the method annotation with it all or none of the writers on the database</span></span><br><span class="line">    <span class="comment">//is executed</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateStudent</span><span class="params">(Long id, String name, String email)</span> </span>&#123;</span><br><span class="line"><span class="comment">//        check whether the student exists</span></span><br><span class="line">        Student student = studentRepository.findById(id)</span><br><span class="line">                .orElseThrow(() -&gt;</span><br><span class="line">                        <span class="keyword">new</span> IllegalStateException(</span><br><span class="line">                                <span class="string">&quot;student id &quot;</span> + id + <span class="string">&quot; does not exist&quot;</span></span><br><span class="line"></span><br><span class="line">                        ));</span><br><span class="line">        <span class="keyword">if</span> (name != <span class="keyword">null</span> &amp;&amp; name.length() &gt; <span class="number">0</span> &amp;&amp; !Objects.equals(student.getName(), name)) &#123;</span><br><span class="line">            student.setName(name);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (email != <span class="keyword">null</span> &amp;&amp; email.length() &gt; <span class="number">0</span> &amp;&amp; !Objects.equals(student.getEmail(), email)) &#123;</span><br><span class="line">            student.setEmail(email);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Repository"><a href="#Repository" class="headerlink" title="@Repository"></a>@Repository</h1><pre><code>it is a class-level annotation. The repository is a DAOs(Data Access Object) that access the database directly. The repository does all the operations related to the database</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//responsible for data access</span></span><br><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">StudentRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">Student</span>, <span class="title">Long</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//   find all emails in the db</span></span><br><span class="line">    <span class="function">Optional&lt;Student&gt; <span class="title">findStudentByEmail</span><span class="params">(String email)</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><pre><code>is the top of any class to declare that this class provides one or more @Bean methods and may be processed by the Spring container to generate bean definitions and service requests for those beans at runtime</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function">CommandLineRunner <span class="title">commandLineRunner</span><span class="params">(StudentRepository repository)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> args -&gt; &#123;</span><br><span class="line">            Student student = <span class="keyword">new</span> Student(</span><br><span class="line">                <span class="string">&quot;Jeremy&quot;</span>,</span><br><span class="line">                LocalDate.of(<span class="number">1995</span>, <span class="number">01</span>, <span class="number">01</span>),</span><br><span class="line">                <span class="string">&quot;Jeremy123@gmail.com&quot;</span>);</span><br><span class="line">            Student student1 = <span class="keyword">new</span> Student(</span><br><span class="line">                    <span class="string">&quot;Kobe&quot;</span>,</span><br><span class="line">                    LocalDate.of(<span class="number">2003</span>, <span class="number">01</span>, <span class="number">01</span>),</span><br><span class="line">                    <span class="string">&quot;Kobe123@gmail.com&quot;</span>);</span><br><span class="line">            List&lt;Student&gt; students = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            students.add(student);</span><br><span class="line">            students.add(student1);</span><br><span class="line">            repository.saveAll(students);</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="References"><a href="#References" class="headerlink" title="References:"></a>References:</h1><ul>
+<li>[1] <a target="_blank" rel="noopener" href="https://www.baeldung.com/spring-core-annotations">Spring Core Annotations</a></li>
+<li>[2] <a target="_blank" rel="noopener" href="https://www.javatpoint.com/spring-boot-annotations">Spring Boot Annotations</a></li>
+<li>[3] <a target="_blank" rel="noopener" href="https://howtodoinjava.com/spring-core/spring-configuration-annotation/">Spring @Configuration annotation example</a></li>
+<li>[4] <a target="_blank" rel="noopener" href="https://www.tutorialspoint.com/spring/spring_ioc_containers.htm">Tutorialspoints</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              Cool
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you for giving me candy<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/ali.png">
+                      <span class="reward-type">Ali Pay</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat.jpg">
+                      <span class="reward-type">WeChat Pay</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wangkeyangleon.github.io/2021/07/08/Spring-Annotations/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2021/06/12/Cluster-Computing-vs-Grid-Computing/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Cluster Computing vs Grid Computing</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Pre-class"><span class="toc-number">1.</span> <span class="toc-text">Pre class</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IoC-Containers"><span class="toc-number">1.1.</span> <span class="toc-text">IoC Containers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-Spring-Bean"><span class="toc-number">1.2.</span> <span class="toc-text">What is Spring Bean</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Autowired"><span class="toc-number">2.</span> <span class="toc-text">@Autowired</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Bean"><span class="toc-number">3.</span> <span class="toc-text">@Bean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Required"><span class="toc-number">4.</span> <span class="toc-text">@Required</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Component"><span class="toc-number">5.</span> <span class="toc-text">@Component</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Controller"><span class="toc-number">6.</span> <span class="toc-text">@Controller</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Service"><span class="toc-number">7.</span> <span class="toc-text">@Service</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Repository"><span class="toc-number">8.</span> <span class="toc-text">@Repository</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Configuration"><span class="toc-number">9.</span> <span class="toc-text">Configuration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#References"><span class="toc-number">10.</span> <span class="toc-text">References:</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+<!--shwo the reading times-->
+
+  <a class="cloud-tie-join-count" href="/2021/07/08/Spring-Annotations/" style="color:gray;font-size:14px;">
+    <span class="icon-smile"></span>
+    <span id="busuanzi_container_page_pv">
+      Views(<span id="busuanzi_value_page_pv"></span>)
+    </span>
+  </a>
+
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "apMqteu62H0eVhUOYG57lX8O-MdYXbMMI",
+            app_key: "qKJOEN5A8wzDEj1iUUT8R7lv",
+            placeholder: "Please leave your comment",
+            avatar:"mm"
+        });
+    }
+</script>
+
+
+  </section>
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -235,9 +458,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
