@@ -8,14 +8,19 @@
   <meta name="baidu-site-verification" content="code-yxX0m503oB" />
   <meta name="google-site-verification" content="GYW4FTfRrNy_1a_yVTyCwPkiRhp2h2edlAb39HYcUOY" />
   <link rel="dns-prefetch" href="https://wangkeyangleon.github.io">
-  <title>Archives: 2021 | Keyang Wang Blog</title>
+  <title>RequestParam VS PathVariable | Keyang Wang Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Keyang Wang Blog">
-<meta property="og:url" content="https://wangkeyangleon.github.io/archives/2021/index.html">
+  <meta name="description" content="Description: this article is talking about the difference between @RequestParam and @PathVariable">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RequestParam VS PathVariable">
+<meta property="og:url" content="https://wangkeyangleon.github.io/2021/07/16/RequestParam-VS-PathVariable/index.html">
 <meta property="og:site_name" content="Keyang Wang Blog">
+<meta property="og:description" content="Description: this article is talking about the difference between @RequestParam and @PathVariable">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-16T04:28:13.000Z">
+<meta property="article:modified_time" content="2021-07-16T04:45:02.576Z">
 <meta property="article:author" content="Keyang Wang">
+<meta property="article:tag" content="Spring Boot">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Keyang Wang Blog" type="application/atom+xml">
@@ -150,36 +155,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-RequestParam-VS-PathVariable" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/16/RequestParam-VS-PathVariable/" class="archive-article-date">
-  	<time datetime="2021-07-16T04:28:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/16/RequestParam-VS-PathVariable/">RequestParam VS PathVariable</a>
+    <h1 class="article-title" itemprop="name">
+      RequestParam VS PathVariable
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/07/16/RequestParam-VS-PathVariable/" class="archive-article-date">
+  	<time datetime="2021-07-16T04:28:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Description: this article is talking about the difference between @RequestParam and @PathVariable</p>
+<a id="more"></a>
+<hr>
+<h1 id="RequestParam"><a href="#RequestParam" class="headerlink" title="@RequestParam"></a>@RequestParam</h1><pre><code>mainly used for the controller to solve the issue of different variable names between the front end and back end, this annotation equals to request.getParam.</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// value: paramter name. </span></span><br><span class="line"><span class="comment">// required: default value is true, which represents that the request must have this parameter, if not it will reports the 404 error</span></span><br><span class="line"><span class="comment">// defaultValue: it represents the default value which means that if the request does not have the same name parameter value it will use the default value</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;login&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(<span class="meta">@RequestParam(value = &quot;username&quot;)</span> <span class="keyword">final</span> String username,</span></span></span><br><span class="line"><span class="function"><span class="params">                    <span class="meta">@RequestParam(value = &quot;password&quot;,required = false)</span> <span class="keyword">final</span> String password,</span></span></span><br><span class="line"><span class="function"><span class="params">                    <span class="meta">@RequestParam(value = &quot;valcode&quot;,required = false)</span> <span class="keyword">final</span> String valcode)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>localhost:8080/demo1?name=Aaron&amp;age=18</li>
+</ul>
+<h1 id="PathVariable"><a href="#PathVariable" class="headerlink" title="@PathVariable"></a>@PathVariable</h1><pre><code>it mainly used for receiving http://host:port/path/&#123;parameter&#125;data
+when the request URL is localhost:8080/demo2/Bob/12, The parameters of the URL placeholder will be bound to the corresponding parameters of the demo2 method by name</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value=&quot;/demo2/&#123;name&#125;/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo2</span><span class="params">(<span class="meta">@PathVariable</span> String name, <span class="meta">@PathVaribale</span> <span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="RequestBody"><a href="#RequestBody" class="headerlink" title="@RequestBody"></a>@RequestBody</h1><pre><code>in post request, when the URL is /user/UpdateAddressByUaId</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value = &quot;/user/UpdateAddressByUaId&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">UpdateAddressByUaId</span><span class="params">(<span class="meta">@RequestBody</span> UserAddress userAddress)</span></span>&#123;</span><br><span class="line">        R rrr = myService.confirmAddress(userAddress);</span><br><span class="line">        <span class="keyword">return</span> rrr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li>[1] <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1798574">@RequestParam</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              Cool
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you for giving me candy<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/ali.png">
+                      <span class="reward-type">Ali Pay</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat.jpg">
+                      <span class="reward-type">WeChat Pay</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,247 +243,158 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wangkeyangleon.github.io/2021/07/16/RequestParam-VS-PathVariable/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/08/N-Tier-Architecture/" class="archive-article-date">
-  	<time datetime="2021-07-08T05:01:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/07/08/N-Tier-Architecture/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">N Tier Architecture</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/08/N-Tier-Architecture/">N Tier Architecture</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Architecture</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RequestParam"><span class="toc-number">1.</span> <span class="toc-text">@RequestParam</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PathVariable"><span class="toc-number">2.</span> <span class="toc-text">@PathVariable</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RequestBody"><span class="toc-number">3.</span> <span class="toc-text">@RequestBody</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
+<!--shwo the reading times-->
+
+  <a class="cloud-tie-join-count" href="/2021/07/16/RequestParam-VS-PathVariable/" style="color:gray;font-size:14px;">
+    <span class="icon-smile"></span>
+    <span id="busuanzi_container_page_pv">
+      Views(<span id="busuanzi_value_page_pv"></span>)
+    </span>
+  </a>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/08/Spring-Annotations/" class="archive-article-date">
-  	<time datetime="2021-07-08T03:45:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
-</a>
-        </div>
-    	 
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "apMqteu62H0eVhUOYG57lX8O-MdYXbMMI",
+            app_key: "qKJOEN5A8wzDEj1iUUT8R7lv",
+            placeholder: "Please leave your comment",
+            avatar:"mm"
+        });
+    }
+</script>
+
+
+  </section>
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/08/Spring-Annotations/">Spring Annotations</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/12/Cluster-Computing-vs-Grid-Computing/" class="archive-article-date">
-  	<time datetime="2021-06-12T07:31:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/12/Cluster-Computing-vs-Grid-Computing/">Cluster Computing vs Grid Computing</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Distributed Computing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/07/Some-minds-with-terminal/" class="archive-article-date">
-  	<time datetime="2021-06-07T12:07:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/07/Some-minds-with-terminal/">Some ideals with the futute computer</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">mind</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/07/%20MarkDown%20grammer/" class="archive-article-date">
-  	<time datetime="2021-06-07T08:24:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/07/%20MarkDown%20grammer/">Learn MarkDown grammer</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/07/hexo/" class="archive-article-date">
-  	<time datetime="2021-06-07T04:40:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/07/hexo/">How to use hexo</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -463,8 +426,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
