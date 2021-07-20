@@ -88,6 +88,13 @@
 
   
   <url>
+    <loc>https://wangkeyangleon.github.io/tags/Java/</loc>
+    <lastmod>2021-07-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wangkeyangleon.github.io/tags/Markdown/</loc>
     <lastmod>2021-07-20</lastmod>
     <changefreq>daily</changefreq>
@@ -102,28 +109,7 @@
   </url>
   
   <url>
-    <loc>https://wangkeyangleon.github.io/tags/Java/</loc>
-    <lastmod>2021-07-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wangkeyangleon.github.io/tags/Mysql/</loc>
-    <lastmod>2021-07-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangkeyangleon.github.io/tags/Architecture/</loc>
-    <lastmod>2021-07-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangkeyangleon.github.io/tags/mind/</loc>
     <lastmod>2021-07-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -137,6 +123,20 @@
   </url>
   
   <url>
+    <loc>https://wangkeyangleon.github.io/tags/mind/</loc>
+    <lastmod>2021-07-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangkeyangleon.github.io/tags/Architecture/</loc>
+    <lastmod>2021-07-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wangkeyangleon.github.io/tags/Spring/</loc>
     <lastmod>2021-07-20</lastmod>
     <changefreq>daily</changefreq>
@@ -144,14 +144,14 @@
   </url>
   
   <url>
-    <loc>https://wangkeyangleon.github.io/tags/Offer/</loc>
+    <loc>https://wangkeyangleon.github.io/tags/hexo/</loc>
     <lastmod>2021-07-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://wangkeyangleon.github.io/tags/hexo/</loc>
+    <loc>https://wangkeyangleon.github.io/tags/Offer/</loc>
     <lastmod>2021-07-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
