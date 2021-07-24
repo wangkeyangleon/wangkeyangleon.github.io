@@ -8,22 +8,20 @@
   <meta name="baidu-site-verification" content="code-yxX0m503oB" />
   <meta name="google-site-verification" content="GYW4FTfRrNy_1a_yVTyCwPkiRhp2h2edlAb39HYcUOY" />
   <link rel="dns-prefetch" href="https://wangkeyangleon.github.io">
-  <title>剑指Offer | Keyang Wang Blog</title>
+  <title>java null and isEmpty | Keyang Wang Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description: this article is talking about some feedbacks from the book of “JianZhi Offer”">
+  <meta name="description" content="Description: this article is talking about the difference between null and isEmpty">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指Offer">
-<meta property="og:url" content="https://wangkeyangleon.github.io/2021/07/16/%E5%89%91%E6%8C%87Offer/index.html">
+<meta property="og:title" content="java null and isEmpty">
+<meta property="og:url" content="https://wangkeyangleon.github.io/2021/07/24/java-null-and-isEmpty/index.html">
 <meta property="og:site_name" content="Keyang Wang Blog">
-<meta property="og:description" content="Description: this article is talking about some feedbacks from the book of “JianZhi Offer”">
+<meta property="og:description" content="Description: this article is talking about the difference between null and isEmpty">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangkeyangleon.github.io/Images/StringResult.png">
-<meta property="article:published_time" content="2021-07-16T07:45:42.000Z">
-<meta property="article:modified_time" content="2021-07-24T05:18:58.176Z">
+<meta property="article:published_time" content="2021-07-24T05:51:02.000Z">
+<meta property="article:modified_time" content="2021-07-24T05:54:38.962Z">
 <meta property="article:author" content="Keyang Wang">
-<meta property="article:tag" content="Offer">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wangkeyangleon.github.io/Images/StringResult.png">
   
     <link rel="alternative" href="/atom.xml" title="Keyang Wang Blog" type="application/atom+xml">
   
@@ -157,49 +155,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-剑指Offer" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java-null-and-isEmpty" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      剑指Offer
+      java null and isEmpty
     </h1>
   
 
         
-        <a href="/2021/07/16/%E5%89%91%E6%8C%87Offer/" class="archive-article-date">
-  	<time datetime="2021-07-16T07:45:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-16</time>
+        <a href="/2021/07/24/java-null-and-isEmpty/" class="archive-article-date">
+  	<time datetime="2021-07-24T05:51:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Description: this article is talking about some feedbacks from the book of “JianZhi Offer”</p>
+        <p>Description: this article is talking about the difference between null and isEmpty</p>
 <a id="more"></a>
 <hr>
-<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><pre><code>- 一个连续的内存并且按照顺序存储数据
-- 创建数组时候，我们需要首先指定数组的容量大小，然后按照大小分配内存。（数组的空间效率不是很好，经常会有空闲的区域没有得到充分的利用）
-- 根据下标在O(1）时间读写任何元素</code></pre>
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><pre><code>他的内部是通过数组实现的，它允许对元素进行快速随机访问。当数组的大小不能满足所需的存储时，就要将已经有的数组的数据复制到新的存储空间中。所以在它的中间位置插入或者删除元素时，需要对祖进行复制、移动、代价比较高。
-因此它适合随机查找和遍历，不适合插入和删除。</code></pre>
-<h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><pre><code>Stirng 是一个final 类，String类是通过char数组来保存字符串的。
-JVM 内存机制：在class文件中有一部分来存储编译期间生成的字面常量以及符号引用，这部分叫做class文件常量池，在运行期间对应着方法区的运行时常量池。String str1 = &quot;hello world&quot;;和String str3 = &quot;hello world&quot;; 都在编译期间生成了 字面常量和符号引用，运行期间字面常量&quot;hello world&quot;被存储在运行时常量池（当然只保存了一份）。通过这种方式来将String对象跟引用绑定的话，JVM执行引擎会先在运行时常量池查找是否存在相同的字面常量，如果存在，则直接将引用指向已经存在的字面常量；否则在运行时常量池开辟一个空间来存储该字面常量，并将引用指向该字面常量。</code></pre>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">String s2 = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">String s3 = <span class="keyword">new</span> String(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">String s4 = <span class="keyword">new</span> String(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"></span><br><span class="line">System.out.println(s1 == s2);</span><br><span class="line">System.out.println(s3==s4);</span><br><span class="line">System.out.println(s1 ==s3);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="/Images/StringResult.png" alt="avatar"></p>
-<h2 id="new-关键字"><a href="#new-关键字" class="headerlink" title="new 关键字"></a>new 关键字</h2><pre><code>通过new关键字来生成对象是在堆区进行的，而在堆区进行对象生成的过程是不会去检测该对象是否已经存在的。 因此通过new来创建对象，创建出的一定是不同的对象，即使字符串的内容是相同的。</code></pre>
-<h2 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h2><pre><code>通过Stirng作连续多次修改，每一次修改都会产生一个临时对象，这样开销太大会影响效率，使用StringBuilder只生成一个对象，并使用append在原有对象的基础上进行操作。</code></pre>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> StringBuilder <span class="title">append</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> append(String.valueOf(obj));</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="keyword">new</span> String();</span><br><span class="line">String s2 = <span class="string">&quot;&quot;</span>;</span><br><span class="line">String s3 = <span class="keyword">null</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h2><pre><code>StringBuffer类的成员方法前面多了一个关键字(Synchronized)，在多线程访问时候起到安全保护作用，StringBuffer是线程安全的</code></pre>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> StringBuffer <span class="title">append</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">    toStringCache = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">super</span>.append(String.valueOf(obj));</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<h1 id="References"><a href="#References" class="headerlink" title="References:"></a>References:</h1><ul>
-<li>[1]<a target="_blank" rel="noopener" href="https://www.cnblogs.com/dolphin0520/p/3778589.html">探秘Java中的String、StringBuilder以及StringBuffer</a></li>
-</ul>
+<h1 id="s1"><a href="#s1" class="headerlink" title="s1"></a>s1</h1><pre><code>java assigns the storage but the value is null, is absolute null</code></pre>
+<h1 id="s2"><a href="#s2" class="headerlink" title="s2"></a>s2</h1><pre><code>java assigns the storage but the value is null, is relative null</code></pre>
+<h1 id="s3"><a href="#s3" class="headerlink" title="s3"></a>s3</h1><pre><code>java does not assign the storage and without value </code></pre>
 
       
 
@@ -244,7 +227,7 @@ JVM 内存机制：在class文件中有一部分来存储编译期间生成的�
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Offer</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -300,7 +283,7 @@ JVM 内存机制：在class文件中有一部分来存储编译期间生成的�
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://wangkeyangleon.github.io/2021/07/16/%E5%89%91%E6%8C%87Offer/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wangkeyangleon.github.io/2021/07/24/java-null-and-isEmpty/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,18 +297,9 @@ JVM 内存机制：在class文件中有一部分来存储编译期间生成的�
   
 <nav id="article-nav">
   
-    <a href="/2021/07/18/LocalDate-VS-Date/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LocalDateVSDate
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/07/16/MysqlSyntax/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MysqlSyntax</div>
+    <a href="/2021/07/18/LocalDate-VS-Date/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LocalDateVSDate</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -352,7 +326,7 @@ JVM 内存机制：在class文件中有一部分来存储编译期间生成的�
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList"><span class="toc-number">1.1.</span> <span class="toc-text">ArrayList</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">2.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">2.1.</span> <span class="toc-text">new 关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuilder"><span class="toc-number">2.2.</span> <span class="toc-text">StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuffer"><span class="toc-number">2.3.</span> <span class="toc-text">StringBuffer</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#References"><span class="toc-number">3.</span> <span class="toc-text">References:</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#s1"><span class="toc-number">1.</span> <span class="toc-text">s1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#s2"><span class="toc-number">2.</span> <span class="toc-text">s2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#s3"><span class="toc-number">3.</span> <span class="toc-text">s3</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -365,7 +339,7 @@ JVM 内存机制：在class文件中有一部分来存储编译期间生成的�
 
 <!--shwo the reading times-->
 
-  <a class="cloud-tie-join-count" href="/2021/07/16/%E5%89%91%E6%8C%87Offer/" style="color:gray;font-size:14px;">
+  <a class="cloud-tie-join-count" href="/2021/07/24/java-null-and-isEmpty/" style="color:gray;font-size:14px;">
     <span class="icon-smile"></span>
     <span id="busuanzi_container_page_pv">
       Views(<span id="busuanzi_value_page_pv"></span>)
