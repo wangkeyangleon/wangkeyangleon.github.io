@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangkeyangleon.github.io/2021/07/25/Linux%20and%20git-Command/</loc>
+    
+    <lastmod>2021-07-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangkeyangleon.github.io/2021/07/25/Computer-Operating-System/</loc>
+    
+    <lastmod>2021-07-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangkeyangleon.github.io/2021/07/16/%E5%89%91%E6%8C%87Offer/</loc>
     
     <lastmod>2021-07-25</lastmod>
@@ -159,6 +173,20 @@
   
   <url>
     <loc>https://wangkeyangleon.github.io/tags/Offer/</loc>
+    <lastmod>2021-07-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangkeyangleon.github.io/tags/OS/</loc>
+    <lastmod>2021-07-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangkeyangleon.github.io/tags/git/</loc>
     <lastmod>2021-07-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -8,14 +8,19 @@
   <meta name="baidu-site-verification" content="code-yxX0m503oB" />
   <meta name="google-site-verification" content="GYW4FTfRrNy_1a_yVTyCwPkiRhp2h2edlAb39HYcUOY" />
   <link rel="dns-prefetch" href="https://wangkeyangleon.github.io">
-  <title>Archives: 2021/7 | Keyang Wang Blog</title>
+  <title>Computer Operating System and Computer Network | Keyang Wang Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Keyang Wang Blog">
-<meta property="og:url" content="https://wangkeyangleon.github.io/archives/2021/07/index.html">
+  <meta name="description" content="Description: this article is talking about some knowledges about computer operating system and computer network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Computer Operating System and Computer Network">
+<meta property="og:url" content="https://wangkeyangleon.github.io/2021/07/25/Computer-Operating-System/index.html">
 <meta property="og:site_name" content="Keyang Wang Blog">
+<meta property="og:description" content="Description: this article is talking about some knowledges about computer operating system and computer network">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-25T11:10:11.000Z">
+<meta property="article:modified_time" content="2021-07-25T11:36:39.426Z">
 <meta property="article:author" content="Keyang Wang">
+<meta property="article:tag" content="OS">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Keyang Wang Blog" type="application/atom+xml">
@@ -150,74 +155,86 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Computer-Operating-System" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/25/Linux%20and%20git-Command/" class="archive-article-date">
-  	<time datetime="2021-07-25T11:10:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/25/Linux%20and%20git-Command/">Linux and git Command</a>
+    <h1 class="article-title" itemprop="name">
+      Computer Operating System and Computer Network
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/25/Computer-Operating-System/" class="archive-article-date">
+        
+        <a href="/2021/07/25/Computer-Operating-System/" class="archive-article-date">
   	<time datetime="2021-07-25T11:10:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-25</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/25/Computer-Operating-System/">Computer Operating System and Computer Network</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Description: this article is talking about some knowledges about computer operating system and computer network </p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<hr>
+<h1 id="缺页"><a href="#缺页" class="headerlink" title="缺页"></a>缺页</h1><p>作业在执行中发生了缺页中断，经系统将该缺页调入内存后，应继续执行被中断的指令。</p>
+<h2 id="缺页中断机构"><a href="#缺页中断机构" class="headerlink" title="缺页中断机构"></a>缺页中断机构</h2><p>在请求分页系统中，每当要访问的页面不存在时候，便产生一缺页中断，请求OS将所缺之页调入内存。缺页中断作为中断同样经历：保护CPU环境、分析中断原因、转入缺页中断、恢复CPU环境等步骤。</p>
+<h2 id="缺页中断与其他中断的区别："><a href="#缺页中断与其他中断的区别：" class="headerlink" title="缺页中断与其他中断的区别："></a>缺页中断与其他中断的区别：</h2><ul>
+<li>在执行期间产生和处理中断信号。通常CPU 是在一条指令执行完后，才检查是否有中断请求到达。若有，便去相应，否则继续执行下条指令。但缺页中断是在指令执行期间霍数据不再内存时所产生的和处理的。</li>
+<li>一条指令在执行期间，可能产生多次缺页中断。有可能执行一个指令时，指令本身跨越两个页面，访问的数据块也不在同一个页面，所以，系统中硬件机构应该能保存多次中断时的状态，并保证最后能返回到中断前产生缺页指令处继续执行。</li>
+</ul>
+<h1 id="在系统间提供可靠的数据传输的层次是：传输层"><a href="#在系统间提供可靠的数据传输的层次是：传输层" class="headerlink" title="在系统间提供可靠的数据传输的层次是：传输层"></a>在系统间提供可靠的数据传输的层次是：<strong>传输层</strong></h1><ul>
+<li>链路层是点到点间通信</li>
+<li>网络层是主机到主机</li>
+<li>传输层是进程到进程</li>
+</ul>
+<h1 id="进程的四个特征"><a href="#进程的四个特征" class="headerlink" title="进程的四个特征"></a>进程的四个特征</h1><ul>
+<li>并发性： 指多个进程实体同存于内存中，且在一段时间内同时运行。并发性是进程的重要特征，同时也成为操作系统的重要特征</li>
+<li>动态性：进程的实质是进程实体的一次执行过程，因此，动态性是进程最基本的特征</li>
+<li>独立性：进行实体是一个独立运行、独立分配资源和独立接受调度的基本单位</li>
+<li>异步性：指进程按各自独立的、不可预知的速度向前推进，或者说实体按异步方式进行</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              Cool
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you for giving me candy<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/ali.png">
+                      <span class="reward-type">Ali Pay</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat.jpg">
+                      <span class="reward-type">WeChat Pay</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -229,285 +246,167 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wangkeyangleon.github.io/2021/07/25/Computer-Operating-System/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/24/java-null-and-isEmpty/" class="archive-article-date">
-  	<time datetime="2021-07-24T05:51:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/07/25/Linux%20and%20git-Command/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Linux and git Command
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/07/24/java-null-and-isEmpty/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java null and isEmpty</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/24/java-null-and-isEmpty/">java null and isEmpty</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%BA%E9%A1%B5"><span class="toc-number">1.</span> <span class="toc-text">缺页</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD%E6%9C%BA%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">缺页中断机构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD%E4%B8%8E%E5%85%B6%E4%BB%96%E4%B8%AD%E6%96%AD%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">缺页中断与其他中断的区别：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8%E7%B3%BB%E7%BB%9F%E9%97%B4%E6%8F%90%E4%BE%9B%E5%8F%AF%E9%9D%A0%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E7%9A%84%E5%B1%82%E6%AC%A1%E6%98%AF%EF%BC%9A%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">2.</span> <span class="toc-text">在系统间提供可靠的数据传输的层次是：传输层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-number">3.</span> <span class="toc-text">进程的四个特征</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
+<!--shwo the reading times-->
+
+  <a class="cloud-tie-join-count" href="/2021/07/25/Computer-Operating-System/" style="color:gray;font-size:14px;">
+    <span class="icon-smile"></span>
+    <span id="busuanzi_container_page_pv">
+      Views(<span id="busuanzi_value_page_pv"></span>)
+    </span>
+  </a>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/18/LocalDate-VS-Date/" class="archive-article-date">
-  	<time datetime="2021-07-18T04:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-18</time>
-</a>
-        </div>
-    	 
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "apMqteu62H0eVhUOYG57lX8O-MdYXbMMI",
+            app_key: "qKJOEN5A8wzDEj1iUUT8R7lv",
+            placeholder: "Please leave your comment",
+            avatar:"mm"
+        });
+    }
+</script>
+
+
+  </section>
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/18/LocalDate-VS-Date/">LocalDateVSDate</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/16/%E5%89%91%E6%8C%87Offer/" class="archive-article-date">
-  	<time datetime="2021-07-16T07:45:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/16/%E5%89%91%E6%8C%87Offer/">剑指Offer</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/16/MysqlSyntax/" class="archive-article-date">
-  	<time datetime="2021-07-16T07:42:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/16/MysqlSyntax/">MysqlSyntax</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/16/RequestParam-VS-PathVariable/" class="archive-article-date">
-  	<time datetime="2021-07-16T04:28:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/16/RequestParam-VS-PathVariable/">RequestParam VS PathVariable</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/08/N-Tier-Architecture/" class="archive-article-date">
-  	<time datetime="2021-07-08T05:01:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/08/N-Tier-Architecture/">N Tier Architecture</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Architecture</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/08/Spring-Annotations/" class="archive-article-date">
-  	<time datetime="2021-07-08T03:45:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/08/Spring-Annotations/">Spring Annotations</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -539,8 +438,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
