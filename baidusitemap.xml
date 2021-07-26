@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://wangkeyangleon.github.io/2021/07/26/Data-Structure-and-Algorithm/</loc>
+    <lastmod>2021-07-26</lastmod>
+  </url>
+  <url>
+    <loc>https://wangkeyangleon.github.io/2021/07/26/Java-Basic/</loc>
+    <lastmod>2021-07-26</lastmod>
+  </url>
+  <url>
     <loc>https://wangkeyangleon.github.io/2021/07/25/Linux%20and%20git-Command/</loc>
     <lastmod>2021-07-25</lastmod>
   </url>
