@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/edb020d0def745ecbec42bc3bc4aa8f0.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlbGxvamF2YTIwMTg=,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2021-07-25T11:10:24.000Z">
-<meta property="article:modified_time" content="2021-07-25T11:36:42.487Z">
+<meta property="article:modified_time" content="2021-07-31T01:48:19.212Z">
 <meta property="article:author" content="Keyang Wang">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -191,6 +191,22 @@
 <li>5-7，代表文件所有者所属组的权限表示情况，分别对应可读(r) 可写(w) 可执行(x)，- 代表没有该项权限</li>
 <li>8-10，表示除文件所有者和所属组的其他人所拥有的权限表示情况，分别对应可读(r) 可写(w) 可执行(x)，- 代表没有该项权限</li>
 </ul>
+<h1 id="linux的返回值"><a href="#linux的返回值" class="headerlink" title="linux的返回值"></a>linux的返回值</h1><ul>
+<li>0： 成功</li>
+<li>“OS error code  1: Operation not permitted”</li>
+<li>“OS error code  2: No such file or directory”</li>
+<li>“OS error code  3: No such process”</li>
+<li>“OS error code  4: Interrupted system call”</li>
+<li>“OS error code  5: Input/output error”</li>
+<li>“OS error code  6: No such device or address”</li>
+<li>“OS error code  7: Argument list too long”</li>
+<li>“OS error code  8: Exec format error”</li>
+<li>“OS error code  9: Bad file descriptor”</li>
+<li>“OS error code 10: No child processes”</li>
+<li>“OS error code 11: Resource temporarily unavailable”</li>
+<li>“OS error code 12: Cannot allocate memory”</li>
+<li>“OS error code 13: Permission denied”</li>
+</ul>
 
       
 
@@ -343,7 +359,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-blame"><span class="toc-number">1.</span> <span class="toc-text">git blame</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E5%8D%81%E4%BD%8D%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">2.</span> <span class="toc-text">Linux 十位文件权限</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-blame"><span class="toc-number">1.</span> <span class="toc-text">git blame</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E5%8D%81%E4%BD%8D%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">2.</span> <span class="toc-text">Linux 十位文件权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">3.</span> <span class="toc-text">linux的返回值</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -498,10 +514,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -510,7 +522,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Computer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Architecture</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +554,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Architecture</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,22 +567,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Offer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Computer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
               </li>
             
             <div class="clearfix"></div>
