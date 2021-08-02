@@ -17,11 +17,13 @@
 <meta property="og:site_name" content="Keyang Wang Blog">
 <meta property="og:description" content="Description: this article is talking about some basic java knowledge">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20170806/5986193_1502023462167_D3726EAF8D0ECA284BAA300E95DDE5AF">
 <meta property="article:published_time" content="2021-07-26T11:16:26.000Z">
-<meta property="article:modified_time" content="2021-07-31T01:55:40.002Z">
+<meta property="article:modified_time" content="2021-08-02T04:35:52.439Z">
 <meta property="article:author" content="Keyang Wang">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://uploadfiles.nowcoder.com/images/20170806/5986193_1502023462167_D3726EAF8D0ECA284BAA300E95DDE5AF">
   
     <link rel="alternative" href="/atom.xml" title="Keyang Wang Blog" type="application/atom+xml">
   
@@ -212,6 +214,11 @@
 <h1 id="String的比较"><a href="#String的比较" class="headerlink" title="String的比较"></a>String的比较</h1><p>== 比较的是引用，即地址。</p>
 <p>equal比较的是值</p>
 <h1 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h1><p><strong>从低到高的</strong>转换通常可以保持其值不变，<strong>从高到低的</strong>转换可能会有数据的舍入，从而损失精度。</p>
+<h1 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h1><p><img src="https://uploadfiles.nowcoder.com/images/20170806/5986193_1502023462167_D3726EAF8D0ECA284BAA300E95DDE5AF" alt="img"></p>
+<h1 id="解决哈希冲突"><a href="#解决哈希冲突" class="headerlink" title="解决哈希冲突"></a>解决哈希冲突</h1><ul>
+<li>开放定址法：当冲突发生时，使用某种探查技术在散列表中行程一个探查序列。沿此序列逐个单元地查找，直到找到给定的关键字，或者碰到一个开放的地址为止。</li>
+<li>链地址法：将所有关键字为同义词的结点链接到同一个单链表中。若给定的散列表长度为m，则可将散列表定义为一个由m个头指针组成的指针数组。凡是散列地址为i的结点，均插入到以T[i]为头指针的单链表中。T中各分量的初值均应为空指针。</li>
+</ul>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>-[1] <a target="_blank" rel="noopener" href="https://www.yiibai.com/java/super-keyword.html#:~:text=java%E4%B8%AD%E7%9A%84%20super%20%E5%85%B3%E9%94%AE,%E5%85%B3%E9%94%AE%E5%AD%97%E5%BC%95%E7%94%A8%E5%8F%98%E9%87%8F%E5%BC%95%E7%94%A8%E3%80%82&text=super%20%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E8%B0%83%E7%94%A8,%E7%9B%B4%E6%8E%A5%E7%88%B6%E7%B1%BB%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%82">Java Super 关键字</a></p>
 
       
@@ -365,7 +372,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E5%A4%A7%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">八大基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer"><span class="toc-number">1.1.</span> <span class="toc-text">Integer</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#super"><span class="toc-number">2.</span> <span class="toc-text">super</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Static"><span class="toc-number">3.</span> <span class="toc-text">Static</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">实例方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">类方法：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E5%A4%9A%E4%B8%AA%E7%B1%BB"><span class="toc-number">4.</span> <span class="toc-text">.Java文件定义多个类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">5.</span> <span class="toc-text">String的比较</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">6.</span> <span class="toc-text">数据类型的转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">7.</span> <span class="toc-text">Reference</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E5%A4%A7%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">八大基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Integer"><span class="toc-number">1.1.</span> <span class="toc-text">Integer</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#super"><span class="toc-number">2.</span> <span class="toc-text">super</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Static"><span class="toc-number">3.</span> <span class="toc-text">Static</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">实例方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">类方法：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E5%A4%9A%E4%B8%AA%E7%B1%BB"><span class="toc-number">4.</span> <span class="toc-text">.Java文件定义多个类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">5.</span> <span class="toc-text">String的比较</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">6.</span> <span class="toc-text">数据类型的转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">7.</span> <span class="toc-text">访问修饰符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81"><span class="toc-number">8.</span> <span class="toc-text">解决哈希冲突</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">9.</span> <span class="toc-text">Reference</span></a></li></ol>
                     </div>
                 </span>
             </div>
