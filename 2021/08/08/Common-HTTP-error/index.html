@@ -8,22 +8,20 @@
   <meta name="baidu-site-verification" content="code-yxX0m503oB" />
   <meta name="google-site-verification" content="GYW4FTfRrNy_1a_yVTyCwPkiRhp2h2edlAb39HYcUOY" />
   <link rel="dns-prefetch" href="https://wangkeyangleon.github.io">
-  <title>N Tier Architecture | Keyang Wang Blog</title>
+  <title>Common HTTP error | Keyang Wang Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description: this article is talking about the different layers when we code">
+  <meta name="description" content="Description: this article is talking about some common HTTP error we might meet">
 <meta property="og:type" content="article">
-<meta property="og:title" content="N Tier Architecture">
-<meta property="og:url" content="https://wangkeyangleon.github.io/2021/07/08/N-Tier-Architecture/index.html">
+<meta property="og:title" content="Common HTTP error">
+<meta property="og:url" content="https://wangkeyangleon.github.io/2021/08/08/Common-HTTP-error/index.html">
 <meta property="og:site_name" content="Keyang Wang Blog">
-<meta property="og:description" content="Description: this article is talking about the different layers when we code">
+<meta property="og:description" content="Description: this article is talking about some common HTTP error we might meet">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wangkeyangleon.github.io/Images/architectureDiagram.png">
-<meta property="article:published_time" content="2021-07-08T05:01:56.000Z">
-<meta property="article:modified_time" content="2021-07-08T05:12:47.740Z">
+<meta property="article:published_time" content="2021-08-08T05:45:57.000Z">
+<meta property="article:modified_time" content="2021-08-08T05:54:17.383Z">
 <meta property="article:author" content="Keyang Wang">
-<meta property="article:tag" content="Architecture">
+<meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wangkeyangleon.github.io/Images/architectureDiagram.png">
   
     <link rel="alternative" href="/atom.xml" title="Keyang Wang Blog" type="application/atom+xml">
   
@@ -157,35 +155,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-N-Tier-Architecture" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Common-HTTP-error" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      N Tier Architecture
+      Common HTTP error
     </h1>
   
 
         
-        <a href="/2021/07/08/N-Tier-Architecture/" class="archive-article-date">
-  	<time datetime="2021-07-08T05:01:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
+        <a href="/2021/08/08/Common-HTTP-error/" class="archive-article-date">
+  	<time datetime="2021-08-08T05:45:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Description: this article is talking about the different layers when we code</p>
+        <p>Description: this article is talking about some common HTTP error we might meet </p>
 <a id="more"></a>
+
 <hr>
-<h1 id="Controller-Layer-AP-Layer"><a href="#Controller-Layer-AP-Layer" class="headerlink" title="Controller Layer/AP Layer"></a>Controller Layer/AP Layer</h1><pre><code>this layer job is simply to receive and handle HTTP(GET,POST,PUT,DELETE) requests sent clients. When an HTTP request is received this layer must forward the request to the service layer.</code></pre>
-<h1 id="Service-Layer"><a href="#Service-Layer" class="headerlink" title="Service Layer"></a>Service Layer</h1><pre><code>this layer handles any business logic for your application. Business logic might vary depending on your application. But here&#39;s and example. Adding a user to the database.
-    1. you might wanna check first if the user exists
-    2. id the email is taken and if not carry on processing the reuqest and forward to the DAO layer</code></pre>
-<h1 id="Data-Access-Object-Layer"><a href="#Data-Access-Object-Layer" class="headerlink" title="Data Access Object Layer"></a>Data Access Object Layer</h1><pre><code>the main purpose of this layer is to contain that performs CRUD operartions against the database of choice. For example receive and student from the service layer and insert into database.</code></pre>
-<h1 id="Architecture-diagram"><a href="#Architecture-diagram" class="headerlink" title="Architecture diagram"></a>Architecture diagram</h1><p><img src="/Images/architectureDiagram.png" alt="avatar"></p>
+<h1 id="400"><a href="#400" class="headerlink" title="400"></a>400</h1><p>The server cannot or will not process the request <strong><u>due to something that is perceived to be a client error</u></strong></p>
+<h1 id="401"><a href="#401" class="headerlink" title="401"></a>401</h1><p>unanuthorized client error status response code indicates that the request has not been applied because it <strong><u>lack vaild authentication credentials for thr target resource</u></strong></p>
+<h1 id="403"><a href="#403" class="headerlink" title="403"></a>403</h1><p>Forbidden client error status response code indicates that <strong><u>the server understood the request but refuses to authorize it .</u></strong></p>
+<h1 id="404"><a href="#404" class="headerlink" title="404"></a>404</h1><p>the server can’t find the requested resources</p>
+<h1 id="405"><a href="#405" class="headerlink" title="405"></a>405</h1><p>method not allowed response status code indicates that the request method is known by the server but it not supported by the target resource</p>
+<h1 id="500"><a href="#500" class="headerlink" title="500"></a>500</h1><p>the server encountered an unexpected condition that prevented it from fulfilling the request.</p>
 
       
 
@@ -230,7 +229,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Architecture</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
         		</li>
       		
 		</ul>
@@ -286,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://wangkeyangleon.github.io/2021/07/08/N-Tier-Architecture/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wangkeyangleon.github.io/2021/08/08/Common-HTTP-error/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +299,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/07/16/RequestParam-VS-PathVariable/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          RequestParam VS PathVariable
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/07/08/Spring-Annotations/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Spring Annotations</div>
+    <a href="/2021/08/08/SQL/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SQL</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -338,7 +328,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Controller-Layer-AP-Layer"><span class="toc-number">1.</span> <span class="toc-text">Controller Layer&#x2F;AP Layer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Service-Layer"><span class="toc-number">2.</span> <span class="toc-text">Service Layer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Data-Access-Object-Layer"><span class="toc-number">3.</span> <span class="toc-text">Data Access Object Layer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Architecture-diagram"><span class="toc-number">4.</span> <span class="toc-text">Architecture diagram</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#400"><span class="toc-number">1.</span> <span class="toc-text">400</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#401"><span class="toc-number">2.</span> <span class="toc-text">401</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#403"><span class="toc-number">3.</span> <span class="toc-text">403</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#404"><span class="toc-number">4.</span> <span class="toc-text">404</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#405"><span class="toc-number">5.</span> <span class="toc-text">405</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#500"><span class="toc-number">6.</span> <span class="toc-text">500</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -351,7 +341,7 @@
 
 <!--shwo the reading times-->
 
-  <a class="cloud-tie-join-count" href="/2021/07/08/N-Tier-Architecture/" style="color:gray;font-size:14px;">
+  <a class="cloud-tie-join-count" href="/2021/08/08/Common-HTTP-error/" style="color:gray;font-size:14px;">
     <span class="icon-smile"></span>
     <span id="busuanzi_container_page_pv">
       Views(<span id="busuanzi_value_page_pv"></span>)
