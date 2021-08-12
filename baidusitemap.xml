@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://wangkeyangleon.github.io/2021/08/08/SQL/</loc>
+    <lastmod>2021-08-12</lastmod>
+  </url>
+  <url>
     <loc>https://wangkeyangleon.github.io/2021/07/25/Computer-Operating-System/</loc>
     <lastmod>2021-08-08</lastmod>
   </url>
   <url>
     <loc>https://wangkeyangleon.github.io/2021/08/08/Common-HTTP-error/</loc>
-    <lastmod>2021-08-08</lastmod>
-  </url>
-  <url>
-    <loc>https://wangkeyangleon.github.io/2021/08/08/SQL/</loc>
     <lastmod>2021-08-08</lastmod>
   </url>
   <url>
@@ -19,6 +19,10 @@
   <url>
     <loc>https://wangkeyangleon.github.io/2021/07/26/Java-Basic/</loc>
     <lastmod>2021-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://wangkeyangleon.github.io/2021/07/26/Data-Structure-and-Algorithm/</loc>
+    <lastmod>2021-08-02</lastmod>
   </url>
   <url>
     <loc>https://wangkeyangleon.github.io/2021/07/16/%E5%89%91%E6%8C%87Offer/</loc>
@@ -38,10 +42,6 @@
   </url>
   <url>
     <loc>https://wangkeyangleon.github.io/2021/07/29/cookies-vs-session/</loc>
-    <lastmod>2021-07-29</lastmod>
-  </url>
-  <url>
-    <loc>https://wangkeyangleon.github.io/2021/07/26/Data-Structure-and-Algorithm/</loc>
     <lastmod>2021-07-29</lastmod>
   </url>
   <url>
