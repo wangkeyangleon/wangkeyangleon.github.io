@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://wangkeyangleon.github.io/2021/08/25/Synchronized/</loc>
+    <lastmod>2021-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://wangkeyangleon.github.io/2021/07/25/Computer-Operating-System/</loc>
+    <lastmod>2021-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://wangkeyangleon.github.io/2021/08/08/SQL/</loc>
+    <lastmod>2021-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://wangkeyangleon.github.io/2021/09/07/Abstract-class-vs-Interface/</loc>
+    <lastmod>2021-09-07</lastmod>
+  </url>
+  <url>
     <loc>https://wangkeyangleon.github.io/2021/07/25/Linux%20and%20git-Command/</loc>
+    <lastmod>2021-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://wangkeyangleon.github.io/2021/08/26/Java-Keywords/</loc>
     <lastmod>2021-08-26</lastmod>
   </url>
   <url>
@@ -9,20 +29,8 @@
     <lastmod>2021-08-26</lastmod>
   </url>
   <url>
-    <loc>https://wangkeyangleon.github.io/2021/08/25/Synchronized/</loc>
-    <lastmod>2021-08-26</lastmod>
-  </url>
-  <url>
     <loc>https://wangkeyangleon.github.io/2021/08/25/singleton/</loc>
     <lastmod>2021-08-25</lastmod>
-  </url>
-  <url>
-    <loc>https://wangkeyangleon.github.io/2021/08/08/SQL/</loc>
-    <lastmod>2021-08-12</lastmod>
-  </url>
-  <url>
-    <loc>https://wangkeyangleon.github.io/2021/07/25/Computer-Operating-System/</loc>
-    <lastmod>2021-08-08</lastmod>
   </url>
   <url>
     <loc>https://wangkeyangleon.github.io/2021/08/08/Common-HTTP-error/</loc>

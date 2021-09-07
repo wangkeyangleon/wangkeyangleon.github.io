@@ -17,11 +17,13 @@
 <meta property="og:site_name" content="Keyang Wang Blog">
 <meta property="og:description" content="Description: this article is talking about Java Lock">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wangkeyangleon.github.io/Images/image-20210907200029375.png">
 <meta property="article:published_time" content="2021-08-25T05:06:03.000Z">
-<meta property="article:modified_time" content="2021-08-26T04:16:58.169Z">
+<meta property="article:modified_time" content="2021-09-07T10:00:35.445Z">
 <meta property="article:author" content="Keyang Wang">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wangkeyangleon.github.io/Images/image-20210907200029375.png">
   
     <link rel="alternative" href="/atom.xml" title="Keyang Wang Blog" type="application/atom+xml">
   
@@ -184,6 +186,9 @@
 <p>synchronized在发生异常时，会自动释放线程占有的锁，因此不会导致死多现象发生</p>
 <p>使用synchronized时，等待的线程会一直等待下去，不能够响应中断</p>
 <p>synchronized无法知道是否成功获取锁</p>
+<p>修饰非静态方法，锁的是this对象</p>
+<p>修饰静态方法，锁的是class对象</p>
+<p><img src="/Images/image-20210907200029375.png" alt="image-20210907200029375"></p>
 <h1 id="Lock"><a href="#Lock" class="headerlink" title="Lock"></a>Lock</h1><p>lock 是一个接口</p>
 <p>lock发生异常时，如果没有主动通过unlock（）去释放锁，则很可能会造成死锁现象，因此使用lock时需要再finally块中释放锁</p>
 <p>lock可以让等待锁的线程相应中断</p>
@@ -311,6 +316,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2021/08/26/Java-Keywords/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java Keywords
+        
+      </div>
+    </a>
   
   
     <a href="/2021/08/25/singleton/" id="article-nav-older" class="article-nav-link-wrap">
