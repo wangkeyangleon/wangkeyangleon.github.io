@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangkeyangleon.github.io/2021/09/08/What-happed-after-you-input-the-network-address/</loc>
+    
+    <lastmod>2021-09-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangkeyangleon.github.io/2021/07/29/Tcp-three-way-handshake/</loc>
+    
+    <lastmod>2021-09-08</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangkeyangleon.github.io/2021/08/08/SQL/</loc>
     
     <lastmod>2021-09-08</lastmod>
@@ -96,13 +110,6 @@
     <loc>https://wangkeyangleon.github.io/2021/07/16/%E5%89%91%E6%8C%87Offer/</loc>
     
     <lastmod>2021-07-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangkeyangleon.github.io/2021/07/29/Tcp-three-way-handshake/</loc>
-    
-    <lastmod>2021-07-29</lastmod>
     
   </url>
   
