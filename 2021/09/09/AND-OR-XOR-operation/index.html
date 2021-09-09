@@ -8,17 +8,17 @@
   <meta name="baidu-site-verification" content="code-yxX0m503oB" />
   <meta name="google-site-verification" content="GYW4FTfRrNy_1a_yVTyCwPkiRhp2h2edlAb39HYcUOY" />
   <link rel="dns-prefetch" href="https://wangkeyangleon.github.io">
-  <title>Computer Operating System and Computer Network | Keyang Wang Blog</title>
+  <title>AND OR XOR operation | Keyang Wang Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description: this article is talking about some knowledges about computer operating system and computer network">
+  <meta name="description" content="Description: this article will talk about the the AND OR XOR operation">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Computer Operating System and Computer Network">
-<meta property="og:url" content="https://wangkeyangleon.github.io/2021/07/25/Computer-Operating-System/index.html">
+<meta property="og:title" content="AND OR XOR operation">
+<meta property="og:url" content="https://wangkeyangleon.github.io/2021/09/09/AND-OR-XOR-operation/index.html">
 <meta property="og:site_name" content="Keyang Wang Blog">
-<meta property="og:description" content="Description: this article is talking about some knowledges about computer operating system and computer network">
+<meta property="og:description" content="Description: this article will talk about the the AND OR XOR operation">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-07-25T11:10:11.000Z">
-<meta property="article:modified_time" content="2021-09-09T01:55:16.531Z">
+<meta property="article:published_time" content="2021-09-09T01:25:29.000Z">
+<meta property="article:modified_time" content="2021-09-09T01:31:25.685Z">
 <meta property="article:author" content="Keyang Wang">
 <meta property="article:tag" content="OS">
 <meta name="twitter:card" content="summary">
@@ -155,102 +155,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Computer-Operating-System" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-AND-OR-XOR-operation" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Computer Operating System and Computer Network
+      AND OR XOR operation
     </h1>
   
 
         
-        <a href="/2021/07/25/Computer-Operating-System/" class="archive-article-date">
-  	<time datetime="2021-07-25T11:10:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-25</time>
+        <a href="/2021/09/09/AND-OR-XOR-operation/" class="archive-article-date">
+  	<time datetime="2021-09-09T01:25:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Description: this article is talking about some knowledges about computer operating system and computer network </p>
+        <p>Description: this article will talk about the the AND OR XOR operation</p>
 <a id="more"></a>
 
-<hr>
-<h1 id="缺页"><a href="#缺页" class="headerlink" title="缺页"></a>缺页</h1><p>作业在执行中发生了缺页中断，经系统将该缺页调入内存后，应继续执行被中断的指令。</p>
-<h2 id="缺页中断机构"><a href="#缺页中断机构" class="headerlink" title="缺页中断机构"></a>缺页中断机构</h2><p>在请求分页系统中，每当要访问的页面不存在时候，便产生一缺页中断，请求OS将所缺之页调入内存。缺页中断作为中断同样经历：保护CPU环境、分析中断原因、转入缺页中断、恢复CPU环境等步骤。</p>
-<h2 id="缺页中断与其他中断的区别："><a href="#缺页中断与其他中断的区别：" class="headerlink" title="缺页中断与其他中断的区别："></a>缺页中断与其他中断的区别：</h2><ul>
-<li>在执行期间产生和处理中断信号。通常CPU 是在一条指令执行完后，才检查是否有中断请求到达。若有，便去相应，否则继续执行下条指令。但缺页中断是在指令执行期间霍数据不再内存时所产生的和处理的。</li>
-<li>一条指令在执行期间，可能产生多次缺页中断。有可能执行一个指令时，指令本身跨越两个页面，访问的数据块也不在同一个页面，所以，系统中硬件机构应该能保存多次中断时的状态，并保证最后能返回到中断前产生缺页指令处继续执行。</li>
-</ul>
-<h1 id="在系统间提供可靠的数据传输的层次是：传输层"><a href="#在系统间提供可靠的数据传输的层次是：传输层" class="headerlink" title="在系统间提供可靠的数据传输的层次是：传输层"></a>在系统间提供可靠的数据传输的层次是：<strong>传输层</strong></h1><ul>
-<li>链路层是点到点间通信</li>
-<li>网络层是主机到主机</li>
-<li>传输层是进程到进程</li>
-</ul>
-<h1 id="进程的四个特征"><a href="#进程的四个特征" class="headerlink" title="进程的四个特征"></a>进程的四个特征</h1><ul>
-<li>并发性： 指多个进程实体同存于内存中，且在一段时间内同时运行。并发性是进程的重要特征，同时也成为操作系统的重要特征</li>
-<li>动态性：进程的实质是进程实体的一次执行过程，因此，动态性是进程最基本的特征</li>
-<li>独立性：进行实体是一个独立运行、独立分配资源和独立接受调度的基本单位</li>
-<li>异步性：指进程按各自独立的、不可预知的速度向前推进，或者说实体按异步方式进行</li>
-</ul>
-<h1 id="OSI-五层协议"><a href="#OSI-五层协议" class="headerlink" title="OSI 五层协议"></a>OSI 五层协议</h1><h2 id="Application-应用层（PDU）"><a href="#Application-应用层（PDU）" class="headerlink" title="Application 应用层（PDU）"></a>Application 应用层（PDU）</h2><p>能够产生网络流量，能够和用户交互的应用程序</p>
-<h2 id="Transport-传输层（segment）（TCP）"><a href="#Transport-传输层（segment）（TCP）" class="headerlink" title="Transport 传输层（segment）（TCP）"></a>Transport 传输层（segment）（TCP）</h2><p>可靠传输建立会话，不可靠传输流量控制</p>
-<p>进程之间的连接，<u><strong>端到端</strong></u></p>
-<h2 id="Network-网络层（packet）（IP）"><a href="#Network-网络层（packet）（IP）" class="headerlink" title="Network 网络层（packet）（IP）"></a>Network 网络层（packet）（IP）</h2><p>IP 地址编址，选择最佳路径</p>
-<p>主机之间的连接，**<u>点到点</u>**</p>
-<h2 id="Data-Link-数据链路层（frame）"><a href="#Data-Link-数据链路层（frame）" class="headerlink" title="Data Link 数据链路层（frame）"></a>Data Link 数据链路层（frame）</h2><p>数据如何封装，添加物理层地址MAC</p>
-<h2 id="Physical-物理层（bit）"><a href="#Physical-物理层（bit）" class="headerlink" title="Physical 物理层（bit）"></a>Physical 物理层（bit）</h2><p>电压，接口标准</p>
-<h1 id="DMA-直接内存访问"><a href="#DMA-直接内存访问" class="headerlink" title="DMA(直接内存访问)"></a>DMA(直接内存访问)</h1><p>是一种完全由硬件执行I/O交换的工作方式。在这种方式中，DMA控制器从CPU完全接管对总线的控制，数据交换不经过CPU，而直接在内存和I/O设备之间进行。DMA适用于高速I/O设备，这个I/O设备读写周期小，而且DMA方式不占用CPU，与指令执行周期无关。</p>
-<h1 id="分时操作系统（time-sharing-system）"><a href="#分时操作系统（time-sharing-system）" class="headerlink" title="分时操作系统（time-sharing system）"></a>分时操作系统（time-sharing system）</h1><p>分时的含义：分时是指多个用户分享使用同一台计算机。多个程序分时共享硬件和软件资源。</p>
-<p>分时操作系统是指在一台主机上连接多个带有显示器和键盘的终端，同时允许多个用户通过主机的终端，以交互方式使用计算机，共享主机中的资源。分时操作系统是一个多用户交互式操作系统名。分时操作系统，主要分为三类：单道分时操作系统，多道分时操作系统，具有前台和后台的分时操作系统。</p>
-<h1 id="广播地址"><a href="#广播地址" class="headerlink" title="广播地址"></a>广播地址</h1><p>主机标识段ID 全为1的IP地址为广播地址</p>
-<h1 id="原语（primitive）"><a href="#原语（primitive）" class="headerlink" title="原语（primitive）"></a>原语（primitive）</h1><p>一般是指有若干条指令组成的程序段，用来实现某个特定功能，在执行过程中不可被中断。在操作系统中，某些被进程调用的操作，如队列操作，对信号量的操作，启动检查外设操作等，一旦开始执行，就不能被中断，否则就会出现操作错误，造成系统混乱。</p>
-<h1 id="计算机网络的主要组成部分"><a href="#计算机网络的主要组成部分" class="headerlink" title="计算机网络的主要组成部分"></a>计算机网络的主要组成部分</h1><ul>
-<li>若干主机（host）：可以是各种类型的计算机，用来向用户提供服务</li>
-<li>一个通信子子网：它由一些通信电路和结点交换机组成，用于进行数据通信</li>
-<li>一组通信协议：这些协议是为主机与主机、主机与通信子网或通信子网中各节点之间通信用的。</li>
-</ul>
-<h1 id="指令的组成"><a href="#指令的组成" class="headerlink" title="指令的组成"></a>指令的组成</h1><ul>
-<li>操作码：该制令完成操作的类型或性质</li>
-<li>地址码：操作对象的地址</li>
-</ul>
-<h1 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h1><ul>
-<li>就绪状态-&gt;运行状态：获得处理机资源</li>
-<li>运行状态-&gt;就绪状态：处于运行状态的进程时间片用完；当有更高优先级的进程就绪时</li>
-<li>运行状态-&gt;阻塞状态：进程请求资源使用和分配；等待某一事件的发生</li>
-<li>阻塞状态-&gt;就绪状态：当进程等待事件到来</li>
-</ul>
-<h1 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h1><p>计算机网络采用分组交换：时延= 发送时延+传播时延+处理时延+排队时延</p>
-<p>发送时延：路由器或者主机发送数据帧所需要的时间，又称传播时延</p>
-<p>传播时延：电磁波在线路信道所需花费的时间</p>
-<p>处理时延：主机或者路由器在收到分组时需要花一定时间进行处理，比如查找路由表，分析首部信息</p>
-<p>排队时延：当分组传输速率大于路由器转发处理速度，需要排队等待，成为排队时延</p>
-<h1 id="临界资源"><a href="#临界资源" class="headerlink" title="临界资源"></a>临界资源</h1><p>是诸进程之间应采取互斥方式访问的，也就是一次只允许一个进程访问的资源，可以为硬件，软件，变量，数据，表格，队列等，并不单指硬件资源，临界区就是每个进程中访问邻接资源的那段代码。</p>
-<h1 id="回送地址（loopback-address）"><a href="#回送地址（loopback-address）" class="headerlink" title="回送地址（loopback address）"></a>回送地址（loopback address）</h1><p>127.0.0.1 是一个保留地址，专门用于网络软件测试以及本地进程间通信，叫做回送地址（loopback address）， 无论什么程序，一旦使用回送地址发送数据，协议软件立即返回，不进行任何网络传输（信息不回跑到局域网/广域网上）。127.0.0.1如果ping通了说明网卡没有问题，就算没有网线也可以ping通。</p>
-<p>192.168.0.1 是本地路由器地址</p>
-<h1 id="网络检测、排错顺序"><a href="#网络检测、排错顺序" class="headerlink" title="网络检测、排错顺序"></a>网络检测、排错顺序</h1><ul>
-<li><p>1.ping 127.0.0.1 先检查TCP/IP 协议栈是否正常。</p>
-</li>
-<li><p>2.ping本地ip检查你网卡是否正常工作</p>
-</li>
-<li><p>3.ping网关地址检查本地主机与网关的链路是否通畅</p>
-</li>
-<li><p>4.ping远程网站检查本地主机与外网远程地址关的链路是否通畅</p>
-</li>
-</ul>
-<h1 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h1><p>ServerSocket(int port): creates a server socket,bound to the specificed port.</p>
-<p>Socket(InertAddress address, int port): creates a stream socket and connects it to the specified port number at the specified IP address.</p>
-<h1 id="端口号的目的"><a href="#端口号的目的" class="headerlink" title="端口号的目的"></a>端口号的目的</h1><p>跟踪同一时间网络中的不同回话</p>
-<h1 id="内核支持线程"><a href="#内核支持线程" class="headerlink" title="内核支持线程"></a>内核支持线程</h1><p>他就是在内核的支持下运行的，离不开内核，系统在内核空间为每一个内核支持线程设置了一个线程控制块，内核通过此块来感知线程存在，并加以控制它</p>
-<h1 id="用户级线程"><a href="#用户级线程" class="headerlink" title="用户级线程"></a>用户级线程</h1><p>他仅存在于用户空间，对于这种线程的创建、撤销、线程之间的同步与通信功能，都无须利用系统调用来实现。一般为一个用户进程穿件较多的用户线程，线程之间的切换和调用比进程要快和简单，这些线程的任务控制块都存在用户空间，内核完全不知道用户级线程的存在</p>
-<h1 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h1><ul>
-<li>地址总线： 用来寻址的</li>
-<li>数据总线：用来负责cpu和寄存器之间的数据交换</li>
-<li>控制总线：用来传送控制信号的，连接cpu和i/o端口，将cpu的指令传送到指定的执行单元</li>
-</ul>
+<h1 id="AND-amp"><a href="#AND-amp" class="headerlink" title="AND(&amp;)"></a>AND(&amp;)</h1><p>0&amp;0 = 0  0&amp;1 = 0 1&amp;0 =0 1&amp;1=1</p>
+<p>同时为1时，结果才为1，否则为0</p>
+<h1 id="OR"><a href="#OR" class="headerlink" title="OR (|)"></a>OR (|)</h1><p>0|0 = 0; 0|1= 1; 1|0 =1; 1|1=1</p>
+<p>只要一个为1，其值就为1</p>
+<h1 id="XOR"><a href="#XOR" class="headerlink" title="XOR (^)"></a>XOR (^)</h1><p>0^0 =0 ; 0^1=1; 1^0=1; 1^1=0</p>
+<p>相同为0不同为1</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/21aspnet/article/details/7387373">按位与、或、异或等运算方法</a></p>
 
       
 
@@ -351,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://wangkeyangleon.github.io/2021/07/25/Computer-Operating-System/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wangkeyangleon.github.io/2021/09/09/AND-OR-XOR-operation/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -365,18 +299,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/07/25/Linux%20and%20git-Command/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/09/09/Java-initialization-process/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Linux and git Command
+          Java initialization process
         
       </div>
     </a>
   
   
-    <a href="/2021/07/24/java-null-and-isEmpty/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java null and isEmpty</div>
+    <a href="/2021/09/08/What-happed-after-you-input-the-network-address/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">What happed after you input the network address</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -403,7 +337,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%BA%E9%A1%B5"><span class="toc-number">1.</span> <span class="toc-text">缺页</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD%E6%9C%BA%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">缺页中断机构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E9%A1%B5%E4%B8%AD%E6%96%AD%E4%B8%8E%E5%85%B6%E4%BB%96%E4%B8%AD%E6%96%AD%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">缺页中断与其他中断的区别：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8%E7%B3%BB%E7%BB%9F%E9%97%B4%E6%8F%90%E4%BE%9B%E5%8F%AF%E9%9D%A0%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E7%9A%84%E5%B1%82%E6%AC%A1%E6%98%AF%EF%BC%9A%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">2.</span> <span class="toc-text">在系统间提供可靠的数据传输的层次是：传输层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-number">3.</span> <span class="toc-text">进程的四个特征</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OSI-%E4%BA%94%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-number">4.</span> <span class="toc-text">OSI 五层协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Application-%E5%BA%94%E7%94%A8%E5%B1%82%EF%BC%88PDU%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">Application 应用层（PDU）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transport-%E4%BC%A0%E8%BE%93%E5%B1%82%EF%BC%88segment%EF%BC%89%EF%BC%88TCP%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">Transport 传输层（segment）（TCP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Network-%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%88packet%EF%BC%89%EF%BC%88IP%EF%BC%89"><span class="toc-number">4.3.</span> <span class="toc-text">Network 网络层（packet）（IP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-Link-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%EF%BC%88frame%EF%BC%89"><span class="toc-number">4.4.</span> <span class="toc-text">Data Link 数据链路层（frame）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Physical-%E7%89%A9%E7%90%86%E5%B1%82%EF%BC%88bit%EF%BC%89"><span class="toc-number">4.5.</span> <span class="toc-text">Physical 物理层（bit）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DMA-%E7%9B%B4%E6%8E%A5%E5%86%85%E5%AD%98%E8%AE%BF%E9%97%AE"><span class="toc-number">5.</span> <span class="toc-text">DMA(直接内存访问)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88time-sharing-system%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">分时操作系统（time-sharing system）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%BF%E6%92%AD%E5%9C%B0%E5%9D%80"><span class="toc-number">7.</span> <span class="toc-text">广播地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E8%AF%AD%EF%BC%88primitive%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">原语（primitive）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%BB%E8%A6%81%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-number">9.</span> <span class="toc-text">计算机网络的主要组成部分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">10.</span> <span class="toc-text">指令的组成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-number">11.</span> <span class="toc-text">进程的状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%B6%E5%BB%B6"><span class="toc-number">12.</span> <span class="toc-text">时延</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%B4%E7%95%8C%E8%B5%84%E6%BA%90"><span class="toc-number">13.</span> <span class="toc-text">临界资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9E%E9%80%81%E5%9C%B0%E5%9D%80%EF%BC%88loopback-address%EF%BC%89"><span class="toc-number">14.</span> <span class="toc-text">回送地址（loopback address）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A3%80%E6%B5%8B%E3%80%81%E6%8E%92%E9%94%99%E9%A1%BA%E5%BA%8F"><span class="toc-number">15.</span> <span class="toc-text">网络检测、排错顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket"><span class="toc-number">16.</span> <span class="toc-text">socket</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8F%B7%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="toc-number">17.</span> <span class="toc-text">端口号的目的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E6%A0%B8%E6%94%AF%E6%8C%81%E7%BA%BF%E7%A8%8B"><span class="toc-number">18.</span> <span class="toc-text">内核支持线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BA%A7%E7%BA%BF%E7%A8%8B"><span class="toc-number">19.</span> <span class="toc-text">用户级线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF"><span class="toc-number">20.</span> <span class="toc-text">总线</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AND-amp"><span class="toc-number">1.</span> <span class="toc-text">AND(&amp;)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OR"><span class="toc-number">2.</span> <span class="toc-text">OR (|)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XOR"><span class="toc-number">3.</span> <span class="toc-text">XOR (^)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -416,7 +350,7 @@
 
 <!--shwo the reading times-->
 
-  <a class="cloud-tie-join-count" href="/2021/07/25/Computer-Operating-System/" style="color:gray;font-size:14px;">
+  <a class="cloud-tie-join-count" href="/2021/09/09/AND-OR-XOR-operation/" style="color:gray;font-size:14px;">
     <span class="icon-smile"></span>
     <span id="busuanzi_container_page_pv">
       Views(<span id="busuanzi_value_page_pv"></span>)
